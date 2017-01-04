@@ -98,7 +98,7 @@ function cordova_git(platform) {
     var mixed_platforms = _.extend({}, platforms),
         plat;
     if (!(platform.name in platforms)) {
-        return Q.reject(new Error('Cordova library "' + platform.name + '" not recognized.'));
+        return Q.reject(new Error('weexpack library "' + platform.name + '" not recognized.'));
     }
     plat = mixed_platforms[platform.name];
     plat.id = 'cordova';

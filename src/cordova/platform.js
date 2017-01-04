@@ -114,9 +114,9 @@ function addHelper(cmd, hooksRunner, projectRoot, targets, opts) {
                         return getPlatformDetailsFromDir(maybeDir, platform);
                     }
                 }
-               // return downloadPlatform(projectRoot, platform, spec, opts);
-
-                return getPlatformDetailsFromDir(path.resolve(path.join(__dirname, '..','..','..', '..', 'generator/platforms/templates',platform)), platform)
+                return downloadPlatform(projectRoot, platform, spec, opts);
+                //WEEX_HOOK
+                //return getPlatformDetailsFromDir(path.resolve(path.join(__dirname, '..','..','..', '..', 'generator/platforms/templates',platform)), platform)
 
             }).then(function(platDetails) {
                 platform = platDetails.platform;
