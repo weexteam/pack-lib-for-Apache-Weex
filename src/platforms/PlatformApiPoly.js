@@ -91,12 +91,13 @@ PlatformApiPoly.createPlatform = function (destinationDir, projectConfig, option
         return Q.reject(new CordovaError('Failed to find platform\'s \'create\' script. ' +
             'Either \'options\' parameter or \'platformDetails\' option is missing'));
 
+    var templatePath = path.join(options.platformDetails.libDir, 'bin', 'templates');
     return Q().then(function(){
-            copyPlatform(options.platformDetails.libDir, destinationDir)
+            copyPlatform(templatePath, destinationDir)
             return PlatformApiPoly;
         })
 
-
+    // WEEX_HOOK
     // var command = path.join(options.platformDetails.libDir, 'bin', 'create');
     // var commandArguments = getCreateArgs(destinationDir, projectConfig, options);
     //
