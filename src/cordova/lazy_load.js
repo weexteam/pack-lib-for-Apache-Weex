@@ -66,7 +66,7 @@ function Platform(platformString) {
     platform = _.extend({}, platforms[name]);
     this.name = name;
     this.version = version || platform.version;
-    this.packageName = 'cordova-' + name;
+    this.packageName = 'weexpack-' + name;
     this.source = 'source' in platform ? platform.source : 'npm';
 }
 

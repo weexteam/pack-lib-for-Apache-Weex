@@ -281,7 +281,7 @@ function downloadPlatform(projectRoot, platform, version, opts) {
         if (opts.fetch) {
             //append cordova to platform
             if(platform in platforms) {
-                target = 'cordova-'+target;
+                target = 'weexpack-'+target;
             }
 
             //gitURLs don't supply a platform, it equals null
