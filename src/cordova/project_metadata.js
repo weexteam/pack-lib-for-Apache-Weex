@@ -18,7 +18,7 @@
 */
 
 var cordova_util = require('./util'),
-    ConfigParser = require('cordova-common').ConfigParser,
+    ConfigParser = require('weexpack-common').ConfigParser,
     Q            = require('q'),
     semver       = require('semver');
 

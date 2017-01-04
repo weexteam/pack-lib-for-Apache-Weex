@@ -18,7 +18,7 @@
 */
 
 var create = require('weexpack-create');
-var events = require('cordova-common').events;
+var events = require('weexpack-common').events;
 
 module.exports = function(dir, optionalId, optionalName, cfg, extEvents){
     if (extEvents) {

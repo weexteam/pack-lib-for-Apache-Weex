@@ -17,15 +17,15 @@
  under the License.
  */
 var cordovaUtil  = require('../cordova/util'),
-    events = require('cordova-common').events,
+    events = require('weexpack-common').events,
     Q = require('q'),
     scriptsFinder = require('./scriptsFinder'),
     Context = require('./Context'),
-    CordovaError = require('cordova-common').CordovaError,
+    CordovaError = require('weexpack-common').CordovaError,
     path = require('path'),
     fs = require('fs'),
     os = require('os'),
-    superspawn = require('cordova-common').superspawn;
+    superspawn = require('weexpack-common').superspawn;
 
 var isWindows = os.platform().slice(0, 3) === 'win';
 

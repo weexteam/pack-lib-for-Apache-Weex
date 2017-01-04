@@ -25,8 +25,8 @@ var fs            = require('fs'),
     shell         = require('shelljs'),
     Q             = require('q'),
     Parser        = require('./parser'),
-    ConfigParser = require('cordova-common').ConfigParser,
-    CordovaError = require('cordova-common').CordovaError,
+    ConfigParser = require('weexpack-common').ConfigParser,
+    CordovaError = require('weexpack-common').CordovaError,
     HooksRunner        = require('../../hooks/HooksRunner');
 
 function windows_parser(project) {

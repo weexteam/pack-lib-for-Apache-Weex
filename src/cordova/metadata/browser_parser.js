@@ -23,7 +23,7 @@ var fs = require('fs'),
     path = require('path'),
     shell = require('shelljs'),
     util = require('../util'),
-    CordovaError = require('cordova-common').CordovaError,
+    CordovaError = require('weexpack-common').CordovaError,
     Q = require('q'),
     Parser = require('./parser');
 

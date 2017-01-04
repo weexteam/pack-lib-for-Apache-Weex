@@ -21,18 +21,18 @@
 
 var path = require('path'),
     fs   = require('fs'),
-    action_stack = require('cordova-common').ActionStack,
+    action_stack = require('weexpack-common').ActionStack,
     dep_graph = require('dep-graph'),
     child_process = require('child_process'),
     semver = require('semver'),
-    PlatformJson = require('cordova-common').PlatformJson,
-    CordovaError = require('cordova-common').CordovaError,
+    PlatformJson = require('weexpack-common').PlatformJson,
+    CordovaError = require('weexpack-common').CordovaError,
     Q = require('q'),
     platform_modules = require('../platforms/platforms'),
     os = require('os'),
     underscore = require('underscore'),
     shell   = require('shelljs'),
-    events = require('cordova-common').events,
+    events = require('weexpack-common').events,
     plugman = require('./plugman'),
     HooksRunner = require('../hooks/HooksRunner'),
     isWindows = (os.platform().substr(0,3) === 'win'),
@@ -40,9 +40,9 @@ var path = require('path'),
     pluginSpec = require('../cordova/plugin_spec_parser'),
     cordovaUtil = require('../cordova/util');
 
-var superspawn = require('cordova-common').superspawn;
-var PluginInfo = require('cordova-common').PluginInfo;
-var PluginInfoProvider = require('cordova-common').PluginInfoProvider;
+var superspawn = require('weexpack-common').superspawn;
+var PluginInfo = require('weexpack-common').PluginInfo;
+var PluginInfoProvider = require('weexpack-common').PluginInfoProvider;
 
 /* INSTALL FLOW
    ------------

@@ -25,16 +25,16 @@ var semver = require('semver');
 
 var common = require('../plugman/platforms/common');
 
-var superspawn = require('cordova-common').superspawn;
-var xmlHelpers = require('cordova-common').xmlHelpers;
+var superspawn = require('weexpack-common').superspawn;
+var xmlHelpers = require('weexpack-common').xmlHelpers;
 var knownPlatforms = require('./platforms');
-var CordovaError = require('cordova-common').CordovaError;
-var PluginInfo = require('cordova-common').PluginInfo;
-var ConfigParser = require('cordova-common').ConfigParser;
-var PlatformJson = require('cordova-common').PlatformJson;
-var ActionStack = require('cordova-common').ActionStack;
-var PlatformMunger = require('cordova-common').ConfigChanges.PlatformMunger;
-var PluginInfoProvider = require('cordova-common').PluginInfoProvider;
+var CordovaError = require('weexpack-common').CordovaError;
+var PluginInfo = require('weexpack-common').PluginInfo;
+var ConfigParser = require('weexpack-common').ConfigParser;
+var PlatformJson = require('weexpack-common').PlatformJson;
+var ActionStack = require('weexpack-common').ActionStack;
+var PlatformMunger = require('weexpack-common').ConfigChanges.PlatformMunger;
+var PluginInfoProvider = require('weexpack-common').PluginInfoProvider;
 
 /**
  * Class, that acts as abstraction over particular platform. Encapsulates the
@@ -53,7 +53,7 @@ function PlatformApiPoly(platform, platformRootDir, events) {
 
     this.root = platformRootDir;
     this.platform = platform;
-    this.events = events || require('cordova-common').events;
+    this.events = events || require('weexpack-common').events;
 
     if (!(platform in knownPlatforms))
         throw new CordovaError('Unknown platform ' + platform);

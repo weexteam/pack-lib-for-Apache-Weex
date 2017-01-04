@@ -24,7 +24,7 @@ var path               = require('path'),
     common             = require('./platforms/common'),
     fs                 = require('fs'),
     childProcess       = require('child_process'),
-    events             = require('cordova-common').events,
+    events             = require('weexpack-common').events,
     plugman            = require('./plugman'),
     bundle             = require('cordova-js/tasks/lib/bundle-browserify'),
     writeLicenseHeader = require('cordova-js/tasks/lib/write-license-header'),
@@ -32,8 +32,8 @@ var path               = require('path'),
     computeCommitId    = require('cordova-js/tasks/lib/compute-commit-id'),
     Readable           = require('stream').Readable;
 
-var PlatformJson = require('cordova-common').PlatformJson;
-var PluginInfoProvider = require('cordova-common').PluginInfoProvider;
+var PlatformJson = require('weexpack-common').PlatformJson;
+var PluginInfoProvider = require('weexpack-common').PluginInfoProvider;
 
 function generateFinalBundle(platform, libraryRelease, outReleaseFile, commitId, platformVersion) {
     var deferred = Q.defer();

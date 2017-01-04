@@ -17,7 +17,7 @@
     under the License.
 */
 
-var xml_helpers = require('cordova-common').xmlHelpers,
+var xml_helpers = require('weexpack-common').xmlHelpers,
     et = require('elementtree'),
     fs = require('fs'),
     path = require('path');

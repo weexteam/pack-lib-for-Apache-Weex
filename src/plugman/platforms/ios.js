@@ -27,9 +27,9 @@ var path = require('path')
   , plist = require('plist')
   , shell = require('shelljs')
   , semver = require('semver')
-  , events = require('cordova-common').events
+  , events = require('weexpack-common').events
   , _ = require('underscore')
-  , CordovaError = require('cordova-common').CordovaError
+  , CordovaError = require('weexpack-common').CordovaError
   , cachedProjectFiles = {}
   ;
 

@@ -22,13 +22,13 @@
 var fs            = require('fs'),
     path          = require('path'),
     util          = require('../util'),
-    events        = require('cordova-common').events,
+    events        = require('weexpack-common').events,
     shell         = require('shelljs'),
     Q             = require('q'),
     Parser        = require('./parser'),
-    ConfigParser = require('cordova-common').ConfigParser,
-    CordovaError = require('cordova-common').CordovaError,
-    xml           = require('cordova-common').xmlHelpers,
+    ConfigParser = require('weexpack-common').ConfigParser,
+    CordovaError = require('weexpack-common').CordovaError,
+    xml           = require('weexpack-common').xmlHelpers,
     HooksRunner        = require('../../hooks/HooksRunner');
 
 function wp8_parser(project) {

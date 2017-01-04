@@ -18,8 +18,8 @@
 var fs = require('fs');
 var path = require('path');
 var shell = require('shelljs');
-var events = require('cordova-common').events;
-var CordovaError = require('cordova-common').CordovaError;
+var events = require('weexpack-common').events;
+var CordovaError = require('weexpack-common').CordovaError;
 
 // These frameworks are required by cordova-ios by default. We should never add/remove them.
 var keep_these_frameworks = [

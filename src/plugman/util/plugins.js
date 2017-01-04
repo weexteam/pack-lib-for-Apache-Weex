@@ -19,11 +19,11 @@
 
 var path = require('path'),
     shell = require('shelljs'),
-    events = require('cordova-common').events,
+    events = require('weexpack-common').events,
     gitclone = require('../../gitclone'),
     tmp_dir;
 
-var PluginInfo = require('cordova-common').PluginInfo;
+var PluginInfo = require('weexpack-common').PluginInfo;
 
 module.exports = {
     searchAndReplace:require('./search-and-replace'),

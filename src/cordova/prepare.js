@@ -18,11 +18,11 @@
 */
 
 var cordova_util      = require('./util'),
-    ConfigParser      = require('cordova-common').ConfigParser,
-    PlatformJson      = require('cordova-common').PlatformJson,
-    PluginInfoProvider = require('cordova-common').PluginInfoProvider,
-    PlatformMunger    = require('cordova-common').ConfigChanges.PlatformMunger,
-    events            = require('cordova-common').events,
+    ConfigParser      = require('weexpack-common').ConfigParser,
+    PlatformJson      = require('weexpack-common').PlatformJson,
+    PluginInfoProvider = require('weexpack-common').PluginInfoProvider,
+    PlatformMunger    = require('weexpack-common').ConfigChanges.PlatformMunger,
+    events            = require('weexpack-common').events,
     platforms         = require('../platforms/platforms'),
     PlatformApiPoly = require('../platforms/PlatformApiPoly'),
     HooksRunner       = require('../hooks/HooksRunner'),

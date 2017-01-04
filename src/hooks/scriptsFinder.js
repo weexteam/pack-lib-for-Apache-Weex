@@ -20,9 +20,9 @@
 var path = require('path'),
     fs = require('fs'),
     cordovaUtil = require('../cordova/util'),
-    events = require('cordova-common').events,
-    PluginInfoProvider = require('cordova-common').PluginInfoProvider,
-    ConfigParser = require('cordova-common').ConfigParser;
+    events = require('weexpack-common').events,
+    PluginInfoProvider = require('weexpack-common').PluginInfoProvider,
+    ConfigParser = require('weexpack-common').ConfigParser;
 
 /**
  * Implements logic to retrieve hook script files defined in special folders and configuration

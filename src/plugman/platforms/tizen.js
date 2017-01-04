@@ -21,8 +21,8 @@
 
 var path = require('path')
     , fs = require('fs')
-    , events = require('cordova-common').events
-    , xml_helpers = require('cordova-common').xmlHelpers;
+    , events = require('weexpack-common').events
+    , xml_helpers = require('weexpack-common').xmlHelpers;
 
 module.exports = {
     www_dir: function(project_dir) {

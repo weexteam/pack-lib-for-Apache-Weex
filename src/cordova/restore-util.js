@@ -18,11 +18,11 @@
 */
 
 var cordova_util = require('./util'),
-    ConfigParser = require('cordova-common').ConfigParser,
+    ConfigParser = require('weexpack-common').ConfigParser,
     path         = require('path'),
     Q            = require('q'),
     fs           = require('fs'),
-    events       = require('cordova-common').events,
+    events       = require('weexpack-common').events,
     cordova      = require('./cordova'),
     semver      = require('semver'),
     promiseutil = require('../util/promise-util');

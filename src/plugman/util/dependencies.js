@@ -23,7 +23,7 @@ var dep_graph = require('dep-graph'),
     path = require('path'),
     fs = require('fs'),
     underscore = require('underscore'),
-    events = require('cordova-common').events,
+    events = require('weexpack-common').events,
     package;
 
 module.exports = package = {

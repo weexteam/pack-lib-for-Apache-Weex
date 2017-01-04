@@ -27,8 +27,8 @@ var common = require('./common'),
     fs   = require('fs'),
     glob = require('glob'),
     jsprojManager = require('../../util/windows/jsprojManager'),
-    events = require('cordova-common').events,
-    xml_helpers = require('cordova-common').xmlHelpers;
+    events = require('weexpack-common').events,
+    xml_helpers = require('weexpack-common').xmlHelpers;
 
 module.exports = {
     platformName: 'windows',

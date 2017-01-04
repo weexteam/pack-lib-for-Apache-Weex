@@ -19,9 +19,9 @@
 
 var  Q             = require('q'),
      shell         = require('shelljs'),
-     events        = require('cordova-common').events,
+     events        = require('weexpack-common').events,
      path          = require('path'),
-     superspawn    = require('cordova-common').superspawn,
+     superspawn    = require('weexpack-common').superspawn,
      os            = require('os');
 
 

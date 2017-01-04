@@ -23,8 +23,8 @@ var shell = require('shelljs'),
     common;
 
 var cordovaUtil = require('../../cordova/util');
-var CordovaError = require('cordova-common').CordovaError;
-var xmlHelpers = require('cordova-common').xmlHelpers;
+var CordovaError = require('weexpack-common').CordovaError;
+var xmlHelpers = require('weexpack-common').xmlHelpers;
 
 module.exports = common = {
     package_name: function(project_dir, www_dir) {

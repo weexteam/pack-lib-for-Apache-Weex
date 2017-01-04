@@ -21,7 +21,7 @@
 
 'use strict';
 
-var events = require('cordova-common').events;
+var events = require('weexpack-common').events;
 
 var _ORIENTATION_ALL = 'all';
 var _ORIENTATION_SENSOR_LANDSCAPE = 'sensorLandscape';

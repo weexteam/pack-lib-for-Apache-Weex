@@ -25,12 +25,12 @@
 
 
 var util = require('util'),
-    xml_helpers = require('cordova-common').xmlHelpers,
+    xml_helpers = require('weexpack-common').xmlHelpers,
     et = require('elementtree'),
     fs = require('fs'),
     glob = require('glob'),
     shell = require('shelljs'),
-    events = require('cordova-common').events,
+    events = require('weexpack-common').events,
     path = require('path'),
     semver = require('semver');
 

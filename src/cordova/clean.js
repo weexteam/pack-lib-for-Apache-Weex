@@ -20,7 +20,7 @@
 var Q = require('q'),
     cordova_util = require('./util'),
     HooksRunner  = require('../hooks/HooksRunner'),
-    events       = require('cordova-common').events,
+    events       = require('weexpack-common').events,
     chain        = require('../util/promise-util').Q_chainmap,
     platform_lib = require('../platforms/platforms');
 

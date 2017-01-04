@@ -20,14 +20,14 @@
 var fs            = require('fs'),
     path          = require('path'),
     et            = require('elementtree'),
-    xml           = require('cordova-common').xmlHelpers,
+    xml           = require('weexpack-common').xmlHelpers,
     util          = require('../util'),
-    events        = require('cordova-common').events,
+    events        = require('weexpack-common').events,
     shell         = require('shelljs'),
     Q             = require('q'),
     Parser        = require('./parser'),
-    ConfigParser = require('cordova-common').ConfigParser,
-    CordovaError = require('cordova-common').CordovaError;
+    ConfigParser = require('weexpack-common').ConfigParser,
+    CordovaError = require('weexpack-common').CordovaError;
 
 
 function android_parser(project) {

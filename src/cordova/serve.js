@@ -23,11 +23,11 @@ var cordova_util = require('./util'),
     shell        = require('shelljs'),
     url          = require('url'),
     platforms    = require('../platforms/platforms'),
-    ConfigParser = require('cordova-common').ConfigParser,
+    ConfigParser = require('weexpack-common').ConfigParser,
     HooksRunner  = require('../hooks/HooksRunner'),
     Q            = require('q'),
     fs           = require('fs'),
-    events       = require('cordova-common').events,
+    events       = require('weexpack-common').events,
     serve        = require('cordova-serve');
 
 var projectRoot;

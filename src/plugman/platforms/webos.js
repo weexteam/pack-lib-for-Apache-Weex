@@ -24,7 +24,7 @@
 
 var path = require('path')
     , common = require('./common')
-    , events = require('cordova-common').events
+    , events = require('weexpack-common').events
     ;
 
 module.exports = {

@@ -20,8 +20,8 @@
 var Q = require('q'),
     fs = require('fs'),
     path = require('path'),
-    PluginInfo = require('cordova-common').PluginInfo,
-    events = require('cordova-common').events,
+    PluginInfo = require('weexpack-common').PluginInfo,
+    events = require('weexpack-common').events,
     init = require('init-package-json');
 
 //returns a promise

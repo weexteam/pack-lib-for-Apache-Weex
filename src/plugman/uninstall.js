@@ -23,12 +23,12 @@ var path = require('path'),
     fs   = require('fs'),
     semver = require('semver'),
     shell= require('shelljs'),
-    action_stack = require('cordova-common').ActionStack,
+    action_stack = require('weexpack-common').ActionStack,
     dependencies = require('./util/dependencies'),
-    CordovaError = require('cordova-common').CordovaError,
+    CordovaError = require('weexpack-common').CordovaError,
     underscore = require('underscore'),
     Q = require('q'),
-    events = require('cordova-common').events,
+    events = require('weexpack-common').events,
     platform_modules = require('../platforms/platforms'),
     promiseutil = require('../util/promise-util'),
     HooksRunner = require('../hooks/HooksRunner'),
@@ -37,9 +37,9 @@ var path = require('path'),
     npmUninstall = require('cordova-fetch').uninstall,
     pluginSpec = require('../cordova/plugin_spec_parser');
 
-var superspawn = require('cordova-common').superspawn;
-var PlatformJson = require('cordova-common').PlatformJson;
-var PluginInfoProvider = require('cordova-common').PluginInfoProvider;
+var superspawn = require('weexpack-common').superspawn;
+var PlatformJson = require('weexpack-common').PlatformJson;
+var PluginInfoProvider = require('weexpack-common').PluginInfoProvider;
 
 // possible options: cli_variables, www_dir
 // Returns a promise.

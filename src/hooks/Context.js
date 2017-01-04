@@ -18,7 +18,7 @@
  */
 
 var path = require('path');
-var events = require('cordova-common').events;
+var events = require('weexpack-common').events;
 
 /**
  * Creates hook script context
@@ -46,10 +46,10 @@ function Context(hook, opts) {
 // for plugins that still require modules, factored to cordova-common.
 var compatMap = {
     '../configparser/ConfigParser': function () {
-        return require('cordova-common').ConfigParser;
+        return require('weexpack-common').ConfigParser;
     },
     '../util/xml-helpers': function () {
-        return require('cordova-common').xmlHelpers;
+        return require('weexpack-common').xmlHelpers;
     }
 };
 

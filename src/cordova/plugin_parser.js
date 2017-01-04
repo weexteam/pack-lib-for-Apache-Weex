@@ -17,7 +17,7 @@
     under the License.
 */
 
-var xml = require('cordova-common').xmlHelpers;
+var xml = require('weexpack-common').xmlHelpers;
 
 /** Deprecated. Use PluginInfo instead. */
 function plugin_parser(xmlPath) {

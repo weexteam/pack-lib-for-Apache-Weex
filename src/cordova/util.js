@@ -20,8 +20,8 @@
 /* jshint sub:true */
 var fs            = require('fs'),
     path          = require('path'),
-    events        = require('cordova-common').events,
-    CordovaError  = require('cordova-common').CordovaError,
+    events        = require('weexpack-common').events,
+    CordovaError  = require('weexpack-common').CordovaError,
     shell         = require('shelljs'),
     url           = require('url'),
     nopt          = require('nopt'),
@@ -230,7 +230,7 @@ function getInstalledPlatformsWithVersions(project_dir) {
     var platforms_on_fs = listPlatforms(project_dir);
 
     return Q.all(platforms_on_fs.map(function(p) {
-        var superspawn    = require('cordova-common').superspawn;
+        var superspawn    = require('weexpack-common').superspawn;
         return superspawn.maybeSpawn(path.join(project_dir, 'platforms', p, 'cordova', 'version'), [], { chmod: true })
         .then(function(v) {
             result[p] = v || null;

@@ -19,9 +19,9 @@
 
 var cordova_util = require('./util'),
     Q = require('q'),
-    superspawn = require('cordova-common').superspawn,
+    superspawn = require('weexpack-common').superspawn,
     path = require('path'),
-    events = require('cordova-common').events;
+    events = require('weexpack-common').events;
 
 function handleError(error) {
     if (error.code === 'ENOENT') {

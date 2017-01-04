@@ -24,14 +24,14 @@ var fs            = require('fs'),
     path          = require('path'),
     xcode         = require('xcode'),
     util          = require('../util'),
-    events        = require('cordova-common').events,
+    events        = require('weexpack-common').events,
     shell         = require('shelljs'),
     plist         = require('plist'),
     Q             = require('q'),
     Parser        = require('./parser'),
-    ConfigParser = require('cordova-common').ConfigParser,
+    ConfigParser = require('weexpack-common').ConfigParser,
     URL           = require('url'),
-    CordovaError = require('cordova-common').CordovaError;
+    CordovaError = require('weexpack-common').CordovaError;
 
 function ios_parser(project) {
 

@@ -22,11 +22,11 @@
 var fs = require('fs');
 var path = require('path')
    , common = require('./common')
-   , events = require('cordova-common').events
-   , xml_helpers = require('cordova-common').xmlHelpers
+   , events = require('weexpack-common').events
+   , xml_helpers = require('weexpack-common').xmlHelpers
    , properties_parser = require('properties-parser')
    , android_project = require('../util/android-project')
-   , CordovaError = require('cordova-common').CordovaError
+   , CordovaError = require('weexpack-common').CordovaError
    ;
 var semver = require('semver');
 

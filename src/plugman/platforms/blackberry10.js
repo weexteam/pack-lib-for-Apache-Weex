@@ -21,8 +21,8 @@
 
 var path = require('path')
    , common = require('./common')
-   , events = require('cordova-common').events
-   , xml_helpers = require('cordova-common').xmlHelpers
+   , events = require('weexpack-common').events
+   , xml_helpers = require('weexpack-common').xmlHelpers
    ;
 
 var TARGETS = ['device', 'simulator'];
