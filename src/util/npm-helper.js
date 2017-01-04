@@ -101,7 +101,12 @@ function fetchPackage(packageName, packageVersion) {
  */
 function cachePackage(packageName, packageVersion) {
     //todo Market-Injection
-    return Q(WeexMarket.info(packageName)).then(function (data) {
+    // WEEK_HOOK
+    if(packageName !== "weexpack-android" || packageName !== "weexpack-ios") {
+      packageName = WeexMarket.info(packageName)
+    }
+
+    return Q().then(function (data) {
       packageName=data.fullname;
 
       npm.config.set('registry','http://registry.npm.alibaba-inc.com');
