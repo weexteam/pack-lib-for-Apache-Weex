@@ -40,10 +40,10 @@ exports = module.exports = {
     get binname() {
         return this.cordova.binname;
     },
-    get events() { return require('cordova-common').events },
-    get configparser() { return require('cordova-common').ConfigParser },
-    get PluginInfo() { return require('cordova-common').PluginInfo },
-    get CordovaError() { return require('cordova-common').CordovaError }
+    get events() { return require('weexpack-common').events },
+    get configparser() { return require('weexpack-common').ConfigParser },
+    get PluginInfo() { return require('weexpack-common').PluginInfo },
+    get CordovaError() { return require('weexpack-common').CordovaError }
 
 };
 
