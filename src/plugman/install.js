@@ -609,6 +609,7 @@ function handleInstall(actions, pluginInfo, platform, project_dir, plugins_dir, 
 
   // @WEEX_HOOK_START: change the project_dir
   return platform_modules.getPlatformApi(platform, project_dir)
+  //return (platform === 'ios'? platform_modules.getRealPlatformApi(platform, project_dir) : platform_modules.getPlatformApi(platform, project_dir))
   // return platform_modules.getPlatformApi(platform, project_dir)
   // @WEEX_HOOK_END: change the project_dir
     .addPlugin(pluginInfo, options)
