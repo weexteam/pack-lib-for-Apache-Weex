@@ -37,7 +37,7 @@ function getPlatformApi(platform, platformRootDir) {
 
     if (!platformRootDir) {
         // If platformRootDir is still undefined, then we're probably is not inside of cordova project
-        throw new Error('Current location is not a Cordova project');
+        throw new Error('Current location is not a weexpack project');
     }
 
     // CB-11174 Resolve symlinks first before working with root directory
@@ -57,11 +57,11 @@ function getPlatformApi(platform, platformRootDir) {
     } catch (err) {
         // Check if platform already compatible w/ PlatformApi and show deprecation warning
         if (err && err.code === 'MODULE_NOT_FOUND' && platforms[platform].apiCompatibleSince) {
-            events.emit('warn', ' Using this version of Cordova with older version of cordova-' + platform +
-                ' is being deprecated. Consider upgrading to cordova-' + platform + '@' +
+            events.emit('warn', ' Using this version of weexpack with older version of weexpack-' + platform +
+                ' is being deprecated. Consider upgrading to weexpack-' + platform + '@' +
                 platforms[platform].apiCompatibleSince + ' or newer.');
         } else {
-            events.emit('warn', 'Error loading cordova-'+platform);
+            events.emit('warn', 'Error loading weexpack-'+platform);
         }
 
         PlatformApi = require('./PlatformApiPoly');
@@ -89,11 +89,11 @@ function getRealPlatformApi(platform, platformRootDir) {
   } catch (err) {
     // Check if platform already compatible w/ PlatformApi and show deprecation warning
     if (err && err.code === 'MODULE_NOT_FOUND' && platforms[platform].apiCompatibleSince) {
-      events.emit('warn', ' Using this version of Cordova with older version of cordova-' + platform +
-        ' is being deprecated. Consider upgrading to cordova-' + platform + '@' +
+      events.emit('warn', ' Using this version of weexpack with older version of weexpack-' + platform +
+        ' is being deprecated. Consider upgrading to weexpack-' + platform + '@' +
         platforms[platform].apiCompatibleSince + ' or newer.');
     } else {
-      events.emit('warn', 'Error loading cordova-'+platform);
+      events.emit('warn', 'Error loading weexpack-'+platform);
     }
 
     PlatformApi = require('./PlatformApiPoly');

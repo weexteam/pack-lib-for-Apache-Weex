@@ -115,7 +115,7 @@ function cordova_git(platform) {
 
 function cordova_npm(platform) {
     if ( !(platform.name in platforms) ) {
-        return Q.reject(new Error('Cordova library "' + platform.name + '" not recognized.'));
+        return Q.reject(new Error('weexpack library "' + platform.name + '" not recognized.'));
     }
     // Check if this version was already downloaded from git, if yes, use that copy.
     // TODO: remove this once we fully switch to npm workflow.
@@ -153,7 +153,7 @@ function custom(platforms, platform) {
     var lib_dir;
     var isUri;
     if (!(platform in platforms)) {
-        return Q.reject(new Error('Cordova library "' + platform + '" not recognized.'));
+        return Q.reject(new Error('weexpack library "' + platform + '" not recognized.'));
     }
 
     plat = _.extend({}, stubplatform, platforms[platform]);

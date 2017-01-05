@@ -143,7 +143,7 @@ function addHelper(cmd, hooksRunner, projectRoot, targets, opts) {
                     if (/-nightly|-dev$/.exec(platDetails.version)) {
                         msg = 'Warning: using prerelease platform ' + platform +
                             '@' + platDetails.version +
-                            '.\nUse \'cordova platform add ' +
+                            '.\nUse \'weexpack platform add ' +
                             platform + '@latest\' to add the latest published version instead.';
                         events.emit('warn', msg);
                     }
