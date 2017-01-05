@@ -8,7 +8,7 @@
     "type": "git",
     "url": "git@github.com:weexteam/weexpack-lib.git"
   },
-  "main": "cordova-lib.js",
+  "main": "lib.js",
   "engines": {
     "node": ">=0.9.9"
   },
