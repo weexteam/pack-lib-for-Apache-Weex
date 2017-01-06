@@ -20,10 +20,10 @@
 var fs = require('fs'),
     path = require('path'),
     util = require('util'),
-    events = require('weexpack-common').events,
+    events = require('cordova-common').events,
     Q = require('q'),
-    superspawn = require('weexpack-common').superspawn,
-    CordovaError = require('weexpack-common').CordovaError;
+    superspawn = require('cordova-common').superspawn,
+    CordovaError = require('cordova-common').CordovaError;
 
 Podfile.FILENAME = 'Podfile';
 
@@ -103,7 +103,7 @@ Podfile.prototype.getPodfileTemplate = function() {
     return util.format(
       'source \'git@gitlab.alibaba-inc.com:alipods/specs.git\'\n' +
       'source \'git@gitlab.alibaba-inc.com:alipods/specs-mirror.git\'\n' +
-      'source \'https://github.com/CocoaPods/Specs.git\'\n' +
+      // 'source \'https://github.com/CocoaPods/Specs.git\'\n' +
       'platform :ios, \'7.0\'\n' +
       '# inhibit_all_warnings!\n' +
       'def common\n' +

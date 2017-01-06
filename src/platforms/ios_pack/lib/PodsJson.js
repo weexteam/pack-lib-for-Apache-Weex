@@ -20,8 +20,8 @@
 var fs = require('fs'),
     path = require('path'),
     util = require('util'),
-    events = require('weexpack-common').events,
-    CordovaError = require('weexpack-common').CordovaError;
+    events = require('cordova-common').events,
+    CordovaError = require('cordova-common').CordovaError;
 
 PodsJson.FILENAME = 'pods.json';
 

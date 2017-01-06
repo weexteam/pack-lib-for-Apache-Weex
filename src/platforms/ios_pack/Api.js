@@ -23,10 +23,10 @@ var fs = require('fs');
 var path = require('path');
 var unorm = require('unorm');
 var projectFile = require('./lib/projectFile');
-var CordovaError = require('weexpack-common').CordovaError;
-var CordovaLogger = require('weexpack-common').CordovaLogger;
-var events = require('weexpack-common').events;
-var PluginManager = require('weexpack-common').PluginManager;
+var CordovaError = require('cordova-common').CordovaError;
+var CordovaLogger = require('cordova-common').CordovaLogger;
+var events = require('cordova-common').events;
+var PluginManager = require('cordova-common').PluginManager;
 var Q = require('q');
 var util = require('util');
 
@@ -55,7 +55,10 @@ function setupEvents(externalEventEmitter) {
 function Api(platform, platformRootDir, events) {
     // 'platform' property is required as per PlatformApi spec
     this.platform = platform || 'ios';
-    this.root = platformRootDir || path.resolve(__dirname, '..');
+    //weexpack modify it
+    var weexPluginRootDir = path.join(platformRootDir, 'Weexplugin');
+    this.root = weexPluginRootDir || path.resolve(__dirname, '..');
+    // this.root = platformRootDir || path.resolve(__dirname, '..');
 
     setupEvents(events);
 
@@ -65,20 +68,22 @@ function Api(platform, platformRootDir, events) {
     try {
         xcodeProjDir = fs.readdirSync(this.root).filter( function(e) { return e.match(/\.xcodeproj$/i); })[0];
         if (!xcodeProjDir) {
-            throw new CordovaError('The provided path "' + this.root + '" is not a weexpack iOS project.');
+            throw new CordovaError('The provided path "' + this.root + '" is not a Weex iOS project.');
         }
 
         var cordovaProjName = xcodeProjDir.substring(xcodeProjDir.lastIndexOf(path.sep)+1, xcodeProjDir.indexOf('.xcodeproj'));
         xcodeCordovaProj = path.join(this.root, cordovaProjName);
     } catch(e) {
-        throw new CordovaError('The provided path "'+this.root+'" is not a weexpack iOS project.');
+        throw new CordovaError('The provided path "'+this.root+'" is not a Cordova iOS project.');
     }
 
     this.locations = {
         root: this.root,
         www: path.join(this.root, 'www'),
         platformWww: path.join(this.root, 'platform_www'),
-        configXml: path.join(xcodeCordovaProj, 'config.xml'),
+        //weexpack modify it
+        configXml: path.join(xcodeCordovaProj, 'Resources/WeexpluginConfig.xml'),
+        // configXml: path.join(xcodeCordovaProj, 'config.xml'),
         defaultConfigXml: path.join(this.root, 'cordova/defaults.xml'),
         pbxproj: path.join(this.root, xcodeProjDir, 'project.pbxproj'),
         xcodeProjDir: path.join(this.root, xcodeProjDir),
@@ -251,11 +256,13 @@ Api.prototype.addPlugin = function (plugin, installOptions) {
 
             var Podfile = require('./lib/Podfile').Podfile;
             var PodsJson = require('./lib/PodsJson').PodsJson;
+            var Podspec = require('./lib/PodspecFile').Podspec;
 
             events.emit('verbose', 'Adding pods since the plugin contained <framework>(s) with type="podspec"');
 
             var podsjsonFile = new PodsJson(path.join(project_dir, PodsJson.FILENAME));
             var podfileFile = new Podfile(path.join(project_dir, Podfile.FILENAME), project_name);
+            var PodspecFile = new Podspec(project_dir, project_name);
 
             frameworkPods.forEach(function(obj) {
                 var podJson = {
@@ -276,6 +283,8 @@ Api.prototype.addPlugin = function (plugin, installOptions) {
                     podsjsonFile.setJson(podJson.name, podJson);
                     // add to Podfile
                     podfileFile.addSpec(podJson.name, podJson.spec);
+                    //add to Podspec
+                    PodspecFile.addSpec(podJson.name, podJson.spec);
                 }
             });
 
@@ -285,6 +294,7 @@ Api.prototype.addPlugin = function (plugin, installOptions) {
             // only write and pod install if the Podfile changed
             if (podfileFile.isDirty()) {
                 podfileFile.write();
+                PodspecFile.write();
                 events.emit('verbose', 'Running `pod install` (to install plugins)');
 
                 // var check_reqs = require('./lib/check_reqs');

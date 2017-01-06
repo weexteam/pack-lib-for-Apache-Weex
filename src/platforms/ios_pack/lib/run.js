@@ -26,7 +26,7 @@ var Q = require('q'),
     spawn  = require('./spawn'),
     check_reqs = require('./check_reqs');
 
-var events = require('weexpack-common').events;
+var events = require('cordova-common').events;
 
 var cordovaPath = path.join(__dirname, '..');
 var projectPath = path.join(__dirname, '..', '..');
