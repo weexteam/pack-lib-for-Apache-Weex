@@ -22,10 +22,10 @@ var Q = require('q');
 
 var AndroidProject = require('./lib/AndroidProject');
 var AndroidStudio = require('./lib/AndroidStudio');
-var PluginManager = require('cordova-common').PluginManager;
+var PluginManager = require('weexpack-common').PluginManager;
 
-var CordovaLogger = require('cordova-common').CordovaLogger;
-var selfEvents = require('cordova-common').events;
+var CordovaLogger = require('weexpack-common').CordovaLogger;
+var selfEvents = require('weexpack-common').events;
 
 var PLATFORM = 'android';
 
