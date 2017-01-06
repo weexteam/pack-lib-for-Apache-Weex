@@ -29,7 +29,7 @@ var fs            = require('fs'),
 
 function blackberry_parser(project) {
     if (!fs.existsSync(path.join(project, 'www'))) {
-        throw new CordovaError('The provided path "' + project + '" is not a Cordova BlackBerry10 project.');
+        throw new CordovaError('The provided path "' + project + '" is not a weexpack BlackBerry10 project.');
     }
 
     // Call the base class constructor

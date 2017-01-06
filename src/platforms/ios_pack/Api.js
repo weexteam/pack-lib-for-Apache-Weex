@@ -65,13 +65,13 @@ function Api(platform, platformRootDir, events) {
     try {
         xcodeProjDir = fs.readdirSync(this.root).filter( function(e) { return e.match(/\.xcodeproj$/i); })[0];
         if (!xcodeProjDir) {
-            throw new CordovaError('The provided path "' + this.root + '" is not a Cordova iOS project.');
+            throw new CordovaError('The provided path "' + this.root + '" is not a weexpack iOS project.');
         }
 
         var cordovaProjName = xcodeProjDir.substring(xcodeProjDir.lastIndexOf(path.sep)+1, xcodeProjDir.indexOf('.xcodeproj'));
         xcodeCordovaProj = path.join(this.root, cordovaProjName);
     } catch(e) {
-        throw new CordovaError('The provided path "'+this.root+'" is not a Cordova iOS project.');
+        throw new CordovaError('The provided path "'+this.root+'" is not a weexpack iOS project.');
     }
 
     this.locations = {
