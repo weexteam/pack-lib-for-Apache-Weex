@@ -40,7 +40,8 @@
     "valid-identifier": "0.0.1",
     "weexpack-common": "git+https://github.com/weexteam/weexpack-common.git",
     "weexpack-create": "git+https://github.com/weexteam/weexpack-create.git",
-    "xcode": "^0.8.5"
+    "xcode": "^0.8.5",
+    "ios-sim": "^5.0.12"
   },
   "devDependencies": {
     "codecov": "^1.0.1",

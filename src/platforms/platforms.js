@@ -49,23 +49,29 @@ function getPlatformApi(platform, platformRootDir) {
     if (!platforms[platform]) throw new Error('Unknown platform ' + platform);
 
     var PlatformApi;
-    try {
-        // First we need to find whether platform exposes its' API via js module
-        // If it does, then we require and instantiate it.
-        var platformApiModule = path.join(platformRootDir, 'cordova', 'Api.js');
-        PlatformApi = require(platformApiModule);
-    } catch (err) {
-        // Check if platform already compatible w/ PlatformApi and show deprecation warning
-        if (err && err.code === 'MODULE_NOT_FOUND' && platforms[platform].apiCompatibleSince) {
-            events.emit('warn', ' Using this version of weexpack with older version of weexpack-' + platform +
-                ' is being deprecated. Consider upgrading to weexpack-' + platform + '@' +
-                platforms[platform].apiCompatibleSince + ' or newer.');
-        } else {
-            events.emit('warn', 'Error loading weexpack-'+platform);
-        }
 
-        PlatformApi = require('./PlatformApiPoly');
-    }
+  //WEEK_HOOK
+    // try {
+    //     // First we need to find whether platform exposes its' API via js module
+    //     // If it does, then we require and instantiate it.
+    //     var platformApiModule = path.join(platformRootDir, 'cordova', 'Api.js');
+    //     PlatformApi = require(platformApiModule);
+    // } catch (err) {
+    //     // Check if platform already compatible w/ PlatformApi and show deprecation warning
+    //     if (err && err.code === 'MODULE_NOT_FOUND' && platforms[platform].apiCompatibleSince) {
+    //         events.emit('warn', ' Using this version of weexpack with older version of weexpack-' + platform +
+    //             ' is being deprecated. Consider upgrading to weexpack-' + platform + '@' +
+    //             platforms[platform].apiCompatibleSince + ' or newer.');
+    //     } else {
+    //         events.emit('warn', 'Error loading weexpack-'+platform);
+    //     }
+    //
+    //     PlatformApi = require('./PlatformApiPoly');
+    // }
+
+  var platformPath = platform + '_' + 'pack';
+  var platformApiPath = path.join(__dirname, platformPath, 'Api.js');
+  PlatformApi = require(platformApiPath);
 
     var platformApi = new PlatformApi(platform, platformRootDir, events);
     cachedApis[platformRootDir] = platformApi;
