@@ -27,7 +27,7 @@ var fs = require('fs');
 var shell = require('shelljs');
 
 var pluginHandlers = require('./plugman/pluginHandlers');
-var CordovaError = require('cordova-common').CordovaError;
+var CordovaError = require('weexpack-common').CordovaError;
 
 var cachedProjectFiles = {};
 

@@ -20,10 +20,10 @@
 var fs = require('fs'),
   path = require('path'),
   util = require('util'),
-  events = require('cordova-common').events,
+  events = require('weexpack-common').events,
   Q = require('q'),
-  superspawn = require('cordova-common').superspawn,
-  CordovaError = require('cordova-common').CordovaError;
+  superspawn = require('weexpack-common').superspawn,
+  CordovaError = require('weexpack-common').CordovaError;
 
 function Podspec(podspecPath, projectName) {
   this.path = podspecPath;

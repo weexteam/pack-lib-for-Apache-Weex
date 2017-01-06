@@ -23,10 +23,10 @@ var fs = require('fs');
 var path = require('path');
 var unorm = require('unorm');
 var projectFile = require('./lib/projectFile');
-var CordovaError = require('cordova-common').CordovaError;
-var CordovaLogger = require('cordova-common').CordovaLogger;
-var events = require('cordova-common').events;
-var PluginManager = require('cordova-common').PluginManager;
+var CordovaError = require('weexpack-common').CordovaError;
+var CordovaLogger = require('weexpack-common').CordovaLogger;
+var events = require('weexpack-common').events;
+var PluginManager = require('weexpack-common').PluginManager;
 var Q = require('q');
 var util = require('util');
 

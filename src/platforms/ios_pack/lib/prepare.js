@@ -25,14 +25,14 @@ var xcode = require('xcode');
 var unorm = require('unorm');
 var plist = require('plist');
 var URL = require('url');
-var events = require('cordova-common').events;
-var xmlHelpers = require('cordova-common').xmlHelpers;
-var ConfigParser = require('cordova-common').ConfigParser;
-var CordovaError = require('cordova-common').CordovaError;
-var PlatformJson = require('cordova-common').PlatformJson;
-var PlatformMunger = require('cordova-common').ConfigChanges.PlatformMunger;
-var PluginInfoProvider = require('cordova-common').PluginInfoProvider;
-var FileUpdater = require('cordova-common').FileUpdater;
+var events = require('weexpack-common').events;
+var xmlHelpers = require('weexpack-common').xmlHelpers;
+var ConfigParser = require('weexpack-common').ConfigParser;
+var CordovaError = require('weexpack-common').CordovaError;
+var PlatformJson = require('weexpack-common').PlatformJson;
+var PlatformMunger = require('weexpack-common').ConfigChanges.PlatformMunger;
+var PluginInfoProvider = require('weexpack-common').PluginInfoProvider;
+var FileUpdater = require('weexpack-common').FileUpdater;
 
 /*jshint sub:true*/
 

@@ -35,7 +35,7 @@ try {
     check_reqs = require('../../../../lib/check_reqs');
 }
 
-var events = require('cordova-common').events;
+var events = require('weexpack-common').events;
 
 var projectPath = path.join(__dirname, '..', '..');
 var projectName = null;
