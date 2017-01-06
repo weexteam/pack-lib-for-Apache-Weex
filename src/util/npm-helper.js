@@ -112,7 +112,7 @@ function cachePackage(packageName, packageVersion) {
     return Q(packageName).then(function (data) {
       packageName=data.fullname;
 
-      npm.config.set('registry','http://registry.npm.alibaba-inc.com');
+      // npm.config.set('registry','http://registry.npm.alibaba-inc.com');
       /*if(data.p){
         npm.config.set('registry','http://registry.npm.alibaba-inc.com');
       }
@@ -129,7 +129,7 @@ function cachePackage(packageName, packageVersion) {
         }
 
         // Load with NPM configuration
-        return loadWithSettingsThenRestore({'cache': cacheDir},
+        return loadWithSettingsThenRestore({'cache': cacheDir,"registry":"http://registry.npm.alibaba-inc.com"},
             function () {
                 // Invoke NPM Cache Add
                 return Q.ninvoke(npm.commands, 'cache', ['add', (packageName + '@' + packageVersion)]).then(
