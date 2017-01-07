@@ -151,7 +151,7 @@ var handlers = {
             }
         }
     },
-    asset:{
+    'asset':{
         install:function(obj, plugin, project, options) {
             if (!obj.src) {
                 throw new CordovaError(generateAttributeError('src', 'asset', plugin.id));
