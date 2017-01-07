@@ -75,7 +75,7 @@ var handlers = {
             // WEEX_HOOK_START
             var dest = path.normalize(obj.target);
             if(options && options.android_studio === true) {
-                dest = path.join('weexplugin', path.normalize(obj.target));
+                dest = path.join('weexplugin/src/main/', path.normalize(obj.target));
             }
             // WEEX_HOOK_END
             copyFile(plugin.dir, obj.src, project.projectDir, dest, !!(options && options.link));
@@ -84,7 +84,7 @@ var handlers = {
             // WEEX_HOOK_START
             var dest = path.normalize(obj.target);
             if(options && options.android_studio === true) {
-                dest = path.join('weexplugin', path.normalize(obj.target));
+                dest = path.join('weexplugin/src/main/', path.normalize(obj.target));
             }
             // WEEX_HOOK_END
             removeFile(project.projectDir, dest);
