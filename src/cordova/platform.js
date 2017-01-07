@@ -161,7 +161,7 @@ function addHelper(cmd, hooksRunner, projectRoot, targets, opts) {
                         options.customTemplate = config_json.lib[platform].template;
                     }
 
-                    events.emit('log', (cmd === 'add' ? 'Adding ' : 'Updating ') + platform + ' project...');
+                    events.emit('log', (cmd === 'add' ? 'Adding ' : 'Updating ') + platform + ' project@' +platDetails.version + '...');
                     // WEEX_HOOK no use for now
                     // var PlatformApi;
                     // try {
