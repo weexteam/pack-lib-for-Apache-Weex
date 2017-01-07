@@ -11,7 +11,7 @@ var fs = require('fs');
 
 function isAndroidStudioProject(root) {
     var eclipseFiles = ['AndroidManifest.xml', 'libs', 'res'/*, 'project.properties', 'platform_www' WEEX_HOOK*/];
-    var androidStudioFiles = ['app', 'gradle', /*'build', 'app/src/main/assets'*/];
+    var androidStudioFiles = ['app', 'gradle'/*, 'build', 'app/src/main/assets'*/];
     var file;
     // for(file of eclipseFiles) {
     //   if(fs.existsSync(path.join(root, file))) {
