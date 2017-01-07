@@ -70,11 +70,24 @@ var handlers = {
         }
     },
     'resource-file':{
+
         install:function(obj, plugin, project, options) {
-            copyFile(plugin.dir, obj.src, project.projectDir, path.normalize(obj.target), !!(options && options.link));
+            // WEEX_HOOK_START
+            var dest = path.normalize(obj.target);
+            if(options && options.android_studio === true) {
+                dest = path.join('weexplugin/src/main/', path.normalize(obj.target));
+            }
+            // WEEX_HOOK_END
+            copyFile(plugin.dir, obj.src, project.projectDir, dest, !!(options && options.link));
         },
         uninstall:function(obj, plugin, project, options) {
-            removeFile(project.projectDir, path.normalize(obj.target));
+            // WEEX_HOOK_START
+            var dest = path.normalize(obj.target);
+            if(options && options.android_studio === true) {
+                dest = path.join('weexplugin/src/main/', path.normalize(obj.target));
+            }
+            // WEEX_HOOK_END
+            removeFile(project.projectDir, dest);
         }
     },
     'framework': {
@@ -138,7 +151,7 @@ var handlers = {
             }
         }
     },
-    asset:{
+    'asset':{
         install:function(obj, plugin, project, options) {
             if (!obj.src) {
                 throw new CordovaError(generateAttributeError('src', 'asset', plugin.id));
