@@ -119,6 +119,7 @@ function cachePackage(packageName, packageVersion) {
       else{
         npm.config.delete('registry');
       }*/
+        var registry=data.p?'http://registry.npm.alibaba-inc.com':'http://registry.npm.taobao.org/';
         var cacheDir = path.join(util.libDirectory, 'npm_cache');
 
         // If already cached, use that rather than calling 'npm cache add' again.
@@ -129,7 +130,7 @@ function cachePackage(packageName, packageVersion) {
         }
 
         // Load with NPM configuration
-        return loadWithSettingsThenRestore({'cache': cacheDir,"registry":"http://registry.npm.alibaba-inc.com"},
+        return loadWithSettingsThenRestore({'cache': cacheDir,"registry":registry},
             function () {
                 // Invoke NPM Cache Add
                 return Q.ninvoke(npm.commands, 'cache', ['add', (packageName + '@' + packageVersion)]).then(
