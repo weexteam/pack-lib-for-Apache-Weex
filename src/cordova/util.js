@@ -40,7 +40,7 @@ var origCwd = null;
 var lib_path = path.join(global_config_path, 'lib');
 
 
-exports.binname = 'cordova';
+exports.binname = 'weexpack';
 exports.globalConfig = global_config_path;
 
 // defer defining libDirectory on exports so we don't create it if
