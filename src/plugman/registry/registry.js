@@ -1,21 +1,21 @@
 /**
-    Licensed to the Apache Software Foundation (ASF) under one
-    or more contributor license agreements.  See the NOTICE file
-    distributed with this work for additional information
-    regarding copyright ownership.  The ASF licenses this file
-    to you under the Apache License, Version 2.0 (the
-    "License"); you may not use this file except in compliance
-    with the License.  You may obtain a copy of the License at
+ Licensed to the Apache Software Foundation (ASF) under one
+ or more contributor license agreements.  See the NOTICE file
+ distributed with this work for additional information
+ regarding copyright ownership.  The ASF licenses this file
+ to you under the Apache License, Version 2.0 (the
+ "License"); you may not use this file except in compliance
+ with the License.  You may obtain a copy of the License at
 
-    http://www.apache.org/licenses/LICENSE-2.0
+ http://www.apache.org/licenses/LICENSE-2.0
 
-    Unless required by applicable law or agreed to in writing,
-    software distributed under the License is distributed on an
-    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
-    KIND, either express or implied.  See the License for the
-    specific language governing permissions and limitations
-    under the License.
-*/
+ Unless required by applicable law or agreed to in writing,
+ software distributed under the License is distributed on an
+ "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ KIND, either express or implied.  See the License for the
+ specific language governing permissions and limitations
+ under the License.
+ */
 
 /* jshint laxcomma:true */
 
@@ -44,7 +44,7 @@ module.exports = {
      * @param {Array} args Command argument
      * @return {Promise.<void>} Promise for completion.
      */
-    owner: function(args) {
+    owner: function (args) {
         var command = args && args[0];
         if (command && (command === 'add' || command === 'rm'))
             return Q.reject('Support for \'owner add/rm\' commands has been removed ' +
@@ -60,7 +60,7 @@ module.exports = {
      * @param {Array} args Array of keywords
      * @return {Promise.<Object>} Promised search results.
      */
-    search: function(args) {
+    search: function (args) {
         return initThenLoadSettingsWithRestore(function () {
             return Q.ninvoke(npm.commands, 'search', args, true);
         });
@@ -71,15 +71,15 @@ module.exports = {
      * @param {Array} with one element - the plugin id or "id@version"
      * @return {Promise.<string>} Promised path to fetched package.
      */
-    fetch: function(plugin) {
+    fetch: function (plugin) {
         plugin = plugin.shift();
-        return Q.fcall(function() {
-            //fetch from npm
-            return fetchPlugin(plugin);
-        })
-        .fail(function(error) {
-            return Q.reject(error);
-        });
+        return Q.fcall(function () {
+                //fetch from npm
+                return fetchPlugin(plugin);
+            })
+            .fail(function (error) {
+                return Q.reject(error);
+            });
     },
 
     /**
@@ -87,25 +87,25 @@ module.exports = {
      * @param {String} name Plugin name
      * @return {Promise.<Object>} Promised package info.
      */
-    info: function(plugin) {
+    info: function (plugin) {
         plugin = plugin.shift();
-        return npmhelper.loadWithSettingsThenRestore({
-            'cache-min': 0,
-            'cache-max': 0,
-            'registry':'http://registry.npm.alibaba-inc.com'
-        }, function() {
-            return Q(WeexMarket.info(plugin)).then(function(data) {
-              plugin=data.fullname;
-              return Q.ninvoke(npm.commands, 'view', [plugin], /* silent = */ true)
-                .then(function (info) {
-                  // Plugin info should be accessed as info[version]. If a version
-                  // specifier like >=x.y.z was used when calling npm view, info
-                  // can contain several versions, but we take the first one here.
-                  var version = Object.keys(info)[0];
-                  return info[version];
-                });
+        return Q(WeexMarket.info(plugin)).then(function (data) {
+            plugin = data.fullname;
+            return npmhelper.loadWithSettingsThenRestore({
+                'cache-min': 0,
+                'cache-max': 0,
+                'registry': data.p ? 'http://registry.npm.alibaba-inc.com' : 'http://registry.npm.taobao.org'
             })
-        });
+        }).then(function (data) {
+            return Q.ninvoke(npm.commands, 'view', [plugin], /* silent = */ true)
+                .then(function (info) {
+                    // Plugin info should be accessed as info[version]. If a version
+                    // specifier like >=x.y.z was used when calling npm view, info
+                    // can contain several versions, but we take the first one here.
+                    var version = Object.keys(info)[0];
+                    return info[version];
+                });
+        })
     }
 };
 
@@ -119,9 +119,9 @@ function initThenLoadSettingsWithRestore(promises) {
 }
 
 /**
-* @param {string} plugin - the plugin id or "id@version"
-* @return {Promise.<string>} Promised path to fetched package.
-*/
+ * @param {string} plugin - the plugin id or "id@version"
+ * @return {Promise.<string>} Promised path to fetched package.
+ */
 function fetchPlugin(plugin) {
     events.emit('log', 'Fetching plugin "' + plugin + '" via npm');
     var parsedSpec = pluginSpec.parse(plugin);
