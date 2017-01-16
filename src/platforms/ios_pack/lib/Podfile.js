@@ -101,9 +101,7 @@ Podfile.prototype.getTemplate = function() {
 */
 Podfile.prototype.getPodfileTemplate = function() {
     return util.format(
-      'source \'git@gitlab.alibaba-inc.com:alipods/specs.git\'\n' +
-      'source \'git@gitlab.alibaba-inc.com:alipods/specs-mirror.git\'\n' +
-      // 'source \'https://github.com/CocoaPods/Specs.git\'\n' +
+      'source \'git@github.com/CocoaPods/Specs.git\'\n' +
       'platform :ios, \'7.0\'\n' +
       '# inhibit_all_warnings!\n' +
       'def common\n' +
